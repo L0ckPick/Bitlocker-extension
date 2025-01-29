@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Cybersecurity Helper",
+    "description": "An extension to enhance web security by blocking phishing, enforcing HTTPS, and more.",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "tabs",
+      "webNavigation",
+      "webRequest",
+      "webRequestBlocking",
+      "cookies"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ]
+  }
+  
