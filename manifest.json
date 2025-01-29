@@ -1,38 +1,29 @@
 {
   "manifest_version": 3,
-  "name": "Cybersecurity Helper",
-  "description": "An extension to enhance web security by blocking phishing, enforcing HTTPS, and more.",
+  "name": "My Chrome Extension",
   "version": "1.0",
-  "permissions": [
-    "activeTab",
-    "storage",
-    "tabs",
-    "webNavigation",
-    "notifications",
-    "scripting",
-    "webRequest",
-    "webRequestBlocking"
-  ],
+  "description": "A simple Chrome extension example.",
+  "permissions": ["storage", "activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ],
-  "host_permissions": [
-    "http://*/*",
-    "https://*/*"
-  ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": "icons/icon.png"
-  },
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  }
+  ]
 }
