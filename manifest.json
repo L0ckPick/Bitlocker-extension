@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "My Chrome Extension",
+  "name": "SpiderByte Extension",
   "version": "1.0",
-  "description": "A simple Chrome extension example.",
+  "description": "A Chrome extension that premotes cyber security, bit by bit.",
   "permissions": ["storage", "activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
